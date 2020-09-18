@@ -1,4 +1,4 @@
-const express = require("express");
+
 const router = require('express').Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -6,17 +6,17 @@ const authenticate = require("./authenticate-middleware");
 
 const Users = require("./auth-model");
 
-router.get("/users", (req, res) => {
-  Users.find()
-      .then(users => {
-          res.status(200).json(users);
-      })
-      .catch(err => {
-          console.log(err.message);
+// router.get("/users", (req, res) => {
+//   Users.find()
+//       .then(users => {
+//           res.status(200).json(users);
+//       })
+//       .catch(err => {
+//           console.log(err.message);
 
-          res.status(500).json({ message: err.message });
-      });
-});
+//           res.status(500).json({ message: err.message });
+//       });
+// });
 
 router.post("/register", (req, res) => {
   const userInfo = req.body;

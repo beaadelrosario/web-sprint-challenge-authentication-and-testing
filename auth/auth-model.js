@@ -1,4 +1,4 @@
-const bcrypt = require("bcryptjs");
+
 const db = require('../database/dbConfig.js')
 
 function find() {
@@ -17,5 +17,5 @@ function findBy(filter) {
 module.exports ={
   find,
   add,
-  findBy,
+  findBy
 };
